@@ -6,11 +6,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit'
 import allReducers from './reducers'
 import { Provider } from 'react-redux';
+import logger from 'redux-logger'
 
 //const applyMiddleware = redux.applyMiddleware
 const thunkMiddleware = require('redux-thunk').default
 
-const store = createStore(allReducers, applyMiddleware(thunkMiddleware))
+const store = createStore(allReducers, applyMiddleware(thunkMiddleware, logger))
 
 
 
